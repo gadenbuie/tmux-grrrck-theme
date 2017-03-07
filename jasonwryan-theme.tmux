@@ -8,7 +8,7 @@ main() {
 	tmux set-option -g window-status-current-format "#I:#W"
 	
 	tmux set-option -g status-interval 1
-	tmux set-option -g status-justify centre # center align window list
+	tmux set-option -g status-justify left # center align window list
 	
 	# Default statusbar colors
 	tmux set-option -g status-fg white
@@ -61,7 +61,7 @@ main() {
 		tmux set-option -g status-right-length 40
 		tmux set-option -g status-left-length 40
 
-		tmux set-option -g status-left "#[fg=blue]#H #[fg=black,bright]• #[default]#[fg=green]#(whoami)#[default]• #[fg=magenta]#(curl ipecho.net/plain;echo)#[default]"
+		tmux set-option -g status-left "#[fg=blue]#H #[fg=black,bright]• #[default]#[fg=green]#(whoami)#[default]• #[fg=magenta]#(curl ipecho.net/plain;echo)#[default]   "
 		tmux set-option -g status-right "#[fg=cyan] #(uptime -p) #[fg=black,bright]• #[fg=magenta]#{cpu_percentage}"
 	else
 		# Statusbar if tmux run in console
@@ -80,7 +80,7 @@ main() {
 		tmux set-option -g message-bg green
 		tmux set-option -g message-attr bright
 
-		tmux set-option -g status-left "#[fg=blue] #H #[fg=black]• #[fg=green]#(whoami) #[fg=black]• #[fg=magenta]#(curl ipecho.net/plain;echo)#[default]"
+		tmux set-option -g status-left "#[fg=blue] #H #[fg=black]• #[fg=green]#(whoami) #[fg=black]• #[fg=magenta]#(curl ipecho.net/plain;echo)#[default]  "
 		tmux set-option -g status-right "#[fg=yellow,nobright] #(uptime -p)#[fg=black,bright] • #[fg=magenta]#{cpu_percentage}#[fg=black] • #[fg=cyan]%H:%M:%S #[default]"
 	fi
 }
