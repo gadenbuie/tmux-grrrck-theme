@@ -13,19 +13,38 @@ main() {
 	# Default statusbar colors
 	tmux set-option -g status-fg white
 	tmux set-option -g status-bg default
+
+	# Powerline symbols
+	tmux_powerline_symbol_right_full=""
+        tmux_powerline_symbol_right_thin="│"
+        tmux_powerline_symbol_left_full=""
+        tmux_powerline_symbol_left_thin="│"
 	
 	# Default window title colors
+	tmux set-window-option -g window-status-format "#[fg=colour236,nounderscore]${tmux_powerline_symbol_right_full}#[default,bold,nounderscore] #I${tmux_powerline_flag} #[fg=colour240,reverse]${tmux_powerline_symbol_right_full}#[default]#[bg=colour240]#[nounderscore] #[default]#[fg=colour231,bg=colour240]#W#[nounderscore] #[fg=colour236,reverse]${tmux_powerline_symbol_right_full}"
 	tmux set-window-option -g window-status-fg black
-	tmux set-window-option -g window-status-bg default
+	tmux set-window-option -g window-status-bg colour76
 	tmux set-window-option -g window-status-attr dim
 	
 	# Active window title colors
+	tmux set-window-option -g window-status-current-format "#[fg=colour236]${tmux_powerline_symbol_right_full}#[default,bold] #I${tmux_powerline_flag} #[fg=colour123,reverse]${tmux_powerline_symbol_right_full}#[default]#[bg=colour123] #W #[fg=colour236,reverse]${tmux_powerline_symbol_right_full}"
 	tmux set-window-option -g window-status-current-fg white
-	tmux set-window-option -g window-status-current-bg default
+	tmux set-window-option -g window-status-current-bg colour33
 	tmux set-window-option -g window-status-current-attr dim
+
+	# Status bar window last active (Tmux 1.8+)
+	tmux set-window-option -g window-status-last-attr none
+	tmux set-window-option -g window-status-last-bg cyan
+	tmux set-window-option -g window-status-last-fg black
+	
+	
+	# Status bar window with activity/silence (monitor-activity, monitor-silence)
+	tmux set-window-option -g window-status-activity-attr bold #,underscore
+	tmux set-window-option -g window-status-activity-bg colour127 # Pink
+	tmux set-window-option -g window-status-activity-fg black
 	
 	# Set bell colours
-	tmux set-option -g window-status-bell-bg default                                                                      
+	tmux set-option -g window-status-bell-bg black                                                                      
 	tmux set-option -g window-status-bell-fg red
 	tmux set-option -g window-status-bell-attr bright
 	
@@ -61,8 +80,8 @@ main() {
 		tmux set-option -g message-bg green
 		tmux set-option -g message-attr bright
 
-		tmux set-option -g status-left "#[fg=blue] #H #[fg=black]• #[fg=green]#(whoami) #[fg=black]• #[fg=yellow]#{battery_percentage}"
-		tmux set-option -g status-right "#[fg=yellow,nobright] #(uptime -p)#[fg=black,bright] • #[fg=magenta]#{cpu_percentage}#[fg=black] • #[fg=cyan]%I:%M #[default]"
+		tmux set-option -g status-left "#[fg=blue] #H #[fg=black]• #[fg=green]#(whoami) #[fg=black]"
+		tmux set-option -g status-right "#[fg=yellow,nobright] #(uptime -p)#[fg=black,bright] • #[fg=magenta]#{cpu_percentage}#[fg=black] • #[fg=cyan]%H:%M:%S #[default]"
 	fi
 }
 main
