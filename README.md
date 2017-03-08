@@ -8,8 +8,8 @@ Tmux plugin for my tmux theme
 * [jooize/tmux-powerline-theme](https://github.com/jooize/tmux-powerline-theme)
 
 ### Requirements
-* `tmux-plugins/tmux-cpu`
-* `tmux-plugins/tmux-net-speed`
+* [tmux-plugins/tmux-cpu](https://github.com/tmux-plugins/tmux-cpu)
+* [tmux-plugins/tmux-net-speed](https://github.com/tmux-plugins/tmux-net-speed)
 
 ### Installation with [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm) (recommended)
 
@@ -29,7 +29,7 @@ set -g @plugin 'tmux-plugins/tmux-cpu'
 set -g @plugin 'tmux-plugins/tmux-net-speed'
 set -g @plugin 'tmux-plugins/tmux-pain-control'
 
-set -g @plugin "gadenbuie/tmux-jasonwryan-theme" 
+set -g @plugin "gadenbuie/tmux-grrrck-theme" 
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run '~/.tmux/plugins/tpm/tpm'
