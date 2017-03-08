@@ -1,41 +1,40 @@
-tmux-jasonwryan-theme
+tmux-grrrck-theme
 =====================
 
-Tmux plugin to get the jason wryan's tmux appearance
+Tmux plugin for my tmux theme
+
+### Thanks to
+* [ctjhoa/tmux-jasonwryan-theme](https://github.com/ctjhoa/tmux-jasonwryan-theme)
+* [jooize/tmux-powerline-theme](https://github.com/jooize/tmux-powerline-theme)
 
 ### Requirements
-* Archlinux (for uptime)
-* `ctjhoa/tmux-cpu`
-* `tmux-plugins/tmux-battery`
+* `tmux-plugins/tmux-cpu`
+* `tmux-plugins/tmux-net-speed`
 
 ### Installation with [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm) (recommended)
-Add plugin to the list of TPM plugins in `.tmux.conf`:
-```
-    set -g @tpm_plugins "                  \
-      tmux-plugins/tpm                     \
-      tmux-plugins/tmux-battery            \
-      tmux-plygins/tmux-cpu                \
-      ctjhoa/tmux-jasonwryan-theme         \
-    "
-```
-Hit `prefix + I` to fetch the plugin and source it. You should now be able to
-use the plugin.
 
-### Manual Installation
-Clone the repo:
+Add plugin to the list of TPM plugins in `.tmux.conf` and hit `prefix + I` to fetch the plugin
+and source it.
+
+For reference, here is my full `.tmux.conf` file:
+
 ```
-    $ git clone https://github.com/ctjhoa/tmux-jasonwryan-theme ~/clone/path
+# Enable mouse controls
+set -g mouse on
+
+# tpm List of plugins
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+set -g @plugin 'tmux-plugins/tmux-cpu'
+set -g @plugin 'tmux-plugins/tmux-net-speed'
+set -g @plugin 'tmux-plugins/tmux-pain-control'
+
+set -g @plugin "gadenbuie/tmux-jasonwryan-theme" 
+
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+run '~/.tmux/plugins/tpm/tpm'
 ```
-Add this line to the bottom of `.tmux.conf`:
-```
-    run-shell ~/clone/path/jasonwryan-theme.tmux
-```
-Reload TMUX environment:
-```
-    # type this in terminal
-    $ tmux source-file ~/.tmux.conf
-```
-You should now be able to use the plugin.
 
 ### License
 [MIT](LICENSE)
+
