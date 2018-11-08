@@ -13,10 +13,16 @@ Tmux plugin for my tmux theme
 
 ### Installation with [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm) (recommended)
 
-Add plugin to the list of TPM plugins in `.tmux.conf` and hit `prefix + I` to fetch the plugin
+Install Tmux plugin Manager
+
+```
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
+
+Add plugin to the list of TPM plugins in `~/.tmux.conf` and hit `prefix + I` to fetch the plugin
 and source it.
 
-For reference, here is my full `.tmux.conf` file:
+For reference, here is my full `~/.tmux.conf` file:
 
 ```
 # Enable mouse controls
